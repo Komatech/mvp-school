@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signin Page</title>
+     
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <form  method="POST">{% csrf_token %} 
+                <div class="fieldwrapper">
+                    <div class="title"><h2>Signin</h2></div>   
+                    <div class="username"><input type="text" name="username" placeholder="username" id="first"></div>
+                    <div class="password"><input type="password" name="password" placeholder="password" id="first"></div>
+                    <button type="submit" class="login">Login</button>
+                    <div class="messages">                        
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="link-wrapper">
+                        <p>Don't have an account? <a href="{% url 'signup' %}"> Signup</a></p>
+                    </div>
+                    <div class="homeview"><p><a href="{% url 'home'%}">Home</a></p></div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1> Subject Display</h1>
+    <h3>Class: {{name}}</h3> 
+    {% for i in host %}
+       
+       <h5>{{i}}</h5>
+       
+    {% endfor %}
+
+    <h1> Continous assesment</h1>
+    <h3>Class: {{name}}</h3> 
+    {% for i in host %}
+       
+       <!-- <h4>Schoolfees : {{i.school_fees}}</h4> -->
+       
+       <h5>{{i.name}} --------- {{i.attendance}} -------- {{i.testScore}} ------- {{i.contAsses}} </h5>
+       
+    {% endfor %}
+    
+    <h1> Result</h1>
+    <h3>Class: {{name}}  Average: {{average}}</h3> 
+    {% for i in host %}
+       <!-- <h4>Schoolfees : {{i.school_fees}}</h4> -->
+       
+       <h5>{{i.name}} ------- {{i.contAsses}} ----- {{i.totalScore}} ------- {{i.grade}} </h5>
+       
+       
+    {% endfor %}
+    <!-- {% for i in subjectDetails %}
+         <p>{{i.name}} - {{i.attendance}} - {{i.testScore}} - {{i.examScore}} - {{i.totalScore}} -{{i.contAsses}}</p> 
+    {% endfor %} -->
+    <a href="{% url 'edit'%}">edit</a>
+</body>
+
+</html>
+
+
+

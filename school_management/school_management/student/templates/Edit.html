@@ -1,0 +1,5 @@
+<form  method="POST">{% csrf_token %}
+    {{edit.as_p}}
+    <button type="submit">save</button>
+</form>
+<a href="{% url 'home'%}">back</a>
